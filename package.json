@@ -1,0 +1,29 @@
+{
+  "name": "skylark-jsbin-render",
+  "description": "A version of jsbin-render  that ported to running on skylarkjs.",
+  "version": "0.9.0",
+  "keywords": [
+    "jsbin-render",
+    "playground"
+  ],
+  "homepage": "https://github.com/skylark-integration/skylark-jsbin-render/",
+  "author": "Hudaokeji, Inc.",
+  "scripts": {
+    "build": "slib build ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skylark-integration/skylark-jsbin-render.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skylark-integration/skylark-jsbin-render/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "skylark-langx": "git+https://github.com/skylark-langx/skylark-langx.git#master",
+    "skylark-jquery": "git+https://github.com/skylark-integration/skylark-jquery.git#master"
+  },
+  "engines": {
+    "node": ">=0.10.1"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["define","renderer"],"mappings":";;;;;;;AAAAA,QACC,cACC,SAASC,GACV,OAAOA","file":"../main.js","sourcesContent":["define([\r\n\t\"./renderer\"\r\n],function(renderer){\r\n\treturn renderer;\r\n})"]}

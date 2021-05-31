@@ -1,8 +1,8 @@
 /**
- * skylark-jsbin-render - A version of jsbin-render  that ported to running on skylarkjs.
+ * skylark-jsbin-renderer - A version of jsbin-renderer  that ported to running on skylarkjs.
  * @author Hudaokeji, Inc.
  * @version v0.9.0
- * @link https://github.com/skylark-integration/skylark-jsbin-render/
+ * @link https://github.com/skylark-integration/skylark-jsbin-renderer/
  * @license MIT
  */
 (function(factory,globals) {
@@ -86,12 +86,12 @@
 
 })(function(define,require) {
 
-define('skylark-jsbin-render/jsbin',[
+define('skylark-jsbin-renderer/jsbin',[
 	"skylark-langx-ns"
 ],function(skylark){
 	return skylark.attach("intg.jsbin");
 });
-define('skylark-jsbin-render/renderer',[
+define('skylark-jsbin-renderer/renderer',[
   "skylark-langx-async/Deferred",
   "skylark-jquery",
    "./jsbin"
@@ -410,13 +410,13 @@ define('skylark-jsbin-render/renderer',[
 
 });
 
-define('skylark-jsbin-render/main',[
+define('skylark-jsbin-renderer/main',[
 	"./renderer"
 ],function(renderer){
 	return renderer;
 });
-define('skylark-jsbin-render', ['skylark-jsbin-render/main'], function (main) { return main; });
+define('skylark-jsbin-renderer', ['skylark-jsbin-renderer/main'], function (main) { return main; });
 
 
 },this);
-//# sourceMappingURL=sourcemaps/skylark-jsbin-render.js.map
+//# sourceMappingURL=sourcemaps/skylark-jsbin-renderer.js.map

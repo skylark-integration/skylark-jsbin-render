@@ -249,32 +249,7 @@ define('skylark-jsbin-renderer/renderer',[
       }, cm.state.lint.options.delay || 0);
     };
 
-    /**
-     * When the iframe resizes, update the size text
-     */
-    renderer.resize = (function () {
-      var size = renderer.$live.find('.size');
 
-      var hide = throttle(function () {
-        size.fadeOut(200);
-      }, 2000);
-
-      var embedResizeDone = false;
-
-      return function (data) {
-        if (!jsbin.embed) {
-          // Display the iframe size in px in the JS Bin UI
-          size.show().html(data.width + 'px');
-          hide();
-        }
-        if (jsbin.embed && self !== top && embedResizeDone === false) {
-          embedResizeDone = true;
-          // Inform the outer page of a size change
-          var height = ($body.outerHeight(true) - $(renderer.runner.iframe).height()) + data.offsetHeight;
-         window.parent.postMessage({ height: height }, '*');
-        }
-      };
-    }());
 
     /**
      * When the iframe focuses, simulate that here
@@ -402,6 +377,33 @@ define('skylark-jsbin-renderer/renderer',[
       renderer.postMessage('console:load:dom', html);
     });
 
+    /**
+     * When the iframe resizes, update the size text
+     */
+    renderer.resize = (function () {
+      var size = renderer.$live.find('.size');
+
+      var hide = jsbin.throttle(function () {
+        size.fadeOut(200);
+      }, 2000);
+
+      var embedResizeDone = false;
+
+      return function (data) {
+        if (!jsbin.embed) {
+          // Display the iframe size in px in the JS Bin UI
+          size.show().html(data.width + 'px');
+          hide();
+        }
+        if (jsbin.embed && self !== top && embedResizeDone === false) {
+          embedResizeDone = true;
+          // Inform the outer page of a size change
+          var height = ($body.outerHeight(true) - $(renderer.runner.iframe).height()) + data.offsetHeight;
+         window.parent.postMessage({ height: height }, '*');
+        }
+      };
+    }());
+    
     return inited.promise;
   }
 

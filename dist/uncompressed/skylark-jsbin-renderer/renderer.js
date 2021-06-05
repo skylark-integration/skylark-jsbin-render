@@ -1,8 +1,9 @@
 define([
   "skylark-langx-async/Deferred",
   "skylark-jquery",
+  "skylark-jsbin-base/storage",
    "./jsbin"
-],function (Deferred,$,jsbin) {
+],function (Deferred,$,store,jsbin) {
     'use strict';
     // move from render/live.js
 
@@ -215,7 +216,7 @@ define([
    * Create the runner iframe, and if postMe wait until the iframe is loaded to
    * start postMessaging the runner.
    */
-  function init($live,runner) {
+  renderer.init = function init($live,runner) {
 
     if (inited) {
       return inited.promise;

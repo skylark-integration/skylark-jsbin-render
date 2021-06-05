@@ -20,8 +20,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "skylark-langx": "git+https://github.com/skylark-langx/skylark-langx.git#master",
-    "skylark-jquery": "git+https://github.com/skylark-integration/skylark-jquery.git#master"
+    "skylark-jquery": "git+https://github.com/skylark-integration/skylark-jquery.git#master",
+    "skylark-langx": "git+https://github.com/skylark-langx/skylark-langx.git#master"
   },
   "engines": {
     "node": ">=0.10.1"

@@ -5,5 +5,5 @@
  * @link https://github.com/skylark-integration/skylark-jsbin-renderer/
  * @license MIT
  */
-define(["skylark-langx-ns"],function(n){return n.attach("intg.jsbin")});
+define(["skylark-jsbin-base"],function(n){return n});
 //# sourceMappingURL=sourcemaps/jsbin.js.map
